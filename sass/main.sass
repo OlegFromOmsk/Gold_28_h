@@ -1,0 +1,458 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
++reset()
+
+body
+	font-family: OpenSans, sans-serif
+	font-size: 14px
+	max-width: 1366px
+	margin: 0 auto
+
+.wrapper
+	+wrapper()
+
+h2, .h2
+	text-transform: uppercase
+	font-size: 18px
+	font-family: roboto, sans-serif
+	margin-bottom: 40px
+	text-align: center
+	padding-top: 60px
+	letter-spacing: 3.5px
+	color: #333b46
+
+h3, .h3
+	font-weight: bold
+	font-size: 18px
+	letter-spacing: .8px
+	margin-bottom: 15px
+	color: $dark
+p
+	line-height: 26px
+	letter-spacing: .8px
+.descr
+	font-size: 14px
+	font-family: OpenSans, sans-serif
+	margin-bottom: 30px
+	line-height: 26px
+	letter-spacing: .8px
+	text-align: center
+	margin: 0 auto
+	padding-bottom: 40px
+	color: $light
+
+#circle1,  #circle2, #circle3
+	color: #fff
+	text-align: center
+	
+header
+	background-position: center
+	background-repeat: no-repeat
+	height: 746px
+
+	.header_line
+		padding-top: 40px
+		+row-flex()
+		.header_line-logo
+			+col()
+			+size(2)
+			+size-mds(10)
+		.header_line-mnu
+			+col()
+			+size(10)
+			+size-mds(2)
+			.hamburger
+				+mds(display, block)
+				display: none
+				text-align: right
+			nav
+				+mds(display, none)
+				padding-top: 7px
+				ul
+					display: flex
+					justify-content: flex-end
+					li a
+						color: #f2f2f2
+						text-decoration: none
+						font-size: 16px
+						font-family: SourceSans, sans-serif
+						padding: 5px 12px
+						border: 1px solid transparent
+						&:hover
+							border: 1px solid #f2f2f2
+							-webkit-border-radius: 25px
+							border-radius: 25px
+	.header_content
+		+xxs(padding-top, 50px)
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+		padding-top: 100px
+		.h1
+			color: $accent
+			text-transform: uppercase
+			font-family: SourceSans, sans-serif
+			font-size: 35px
+		p
+			color: #fff
+			font-size: 16px
+			font-family: OpenSans, sans-serif
+			max-width: 500px
+			text-align: center
+			margin-top: 25px
+			line-height: 26px
+			letter-spacing: .8px
+
+.s_about
+	&_box
+		background-repeat: no-repeat
+		background-position: center right
+		max-width: 850px
+		margin: 0 auto 40px
+		.h2
+			text-align: left
+		.descr
+			max-width: 400px
+			text-align: left
+			margin-left: 0
+
+		.adv-items
+			max-width: 650px
+			z-index: 1
+			ul
+				+xs-block
+					column-count: 1
+					height: auto
+				column-count: 2
+				height: 200px
+				column-fill: auto
+				li
+					color: $light
+					padding-bottom: 10px
+					&::before
+						content: '-'
+						color: $accent
+						font-weight: bold
+						margin-right: 7px
+
+.s_uslugi
+	background-color: #f3f3f3
+	.wrapper
+		.h2, p
+			text-align: center
+			margin-right: auto
+			margin-left: auto
+			max-width: 550px
+		.h2
+			padding-top: 40px
+		.s_uslugi-items
+			+row-flex()	
+			max-width: 900px
+			margin: 0 auto
+			.s_uslugi_item
+				+col()
+				+size(4)
+				+size-mds(12)
+				padding: 0 10px 10px
+				+mds(text-align, center)
+				p
+					color: #8c8c8c
+					text-align: left
+					font-size: 14px
+					letter-spacing: 0.5px
+					line-height: 22px
+					+mds(padding-bottom, 10px)
+				&-img
+					display: flex
+					align-items: center
+					justify-content: center
+					margin-bottom: 40px
+					padding-top: 10px
+					+mds(text-align, center)
+					img
+						display: inline-block
+						height: 180px
+						width: 135px
+					.small_pic
+						height: 136px
+						width: auto
+						margin-left: 10px
+			.reverse
+				+mds-block
+					display: flex
+					flex-direction: column
+				.s_uslugi_item-img
+					order: 3	
+
+.s_why
+	background-color: #333
+	color: #fff
+	.h2
+		color: #fff
+
+	&_box
+		+row-flex()
+		max-width: 900px
+		margin: 0 auto
+		padding-bottom: 50px
+		align-items: center
+		.s_why-items
+			+col()
+			+size(6)
+			+size-mds(12)
+			
+			ul
+				li
+					display: flex
+					align-items: center
+					margin-bottom: 15px
+					font-size: 18px
+					i
+						font-size: 28px
+						background-color: #999
+						padding: 12px
+						border-radius: 10em
+						margin-right: 30px
+		.s_why-numbers
+			+col()
+			+size(6)
+			+size-mds(12)
+			+mds(padding-top, 40px)
+			justify-content: space-between
+			.wrap
+				display: flex
+				align-items: center
+				justify-content: space-around
+				.numbers_item
+					span
+						display: block
+						text-align: center
+
+.s_portfolio
+	background-color: #f3f3f3
+	p
+		text-align: center
+		max-width: 900px
+		margin: 0 auto
+	&_box
+		.porto_mnu
+			max-width: 1000px
+			margin: 0 auto 30px
+			
+			ul
+				display: flex
+				flex-wrap: wrap
+				justify-content: center
+				li
+					color: #464646
+					margin: 0 25px
+					line-height: 40px
+		.porto_carousel
+			padding-bottom: 60px			
+			.owl-dots
+				display: block
+				padding-top: 10px
+
+.s_connect
+	padding: 40px
+	color: #fff
+	.wrap
+		max-width: 1000px
+		margin: 0 auto
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		+mds(justify-content, center)
+		p
+			display: inline-block
+			font-size: 18px
+			+mds-block
+				text-align: center
+				padding-bottom: 15px
+			span
+				font-weight: bold
+				
+		a
+			color: #fff
+			font-size: 16px
+			text-decoration: none
+			border: 1px solid #fff
+			border-radius: 20px
+			padding: 7px 35px
+			&:hover
+				background-color: darken($accent, 10%)
+
+.s_review
+	background-color: #f3f3f3
+	padding-bottom: 50px
+	.descr
+		max-width: 500px
+	.review_carousel
+		background-color: #fff
+
+		.owl-dots
+			display: block
+			padding-bottom: 25px
+		.review_slide
+			
+			+row-flex()
+			margin-left: auto
+			margin-right: auto
+			max-width: 1000px
+			padding: 30px 30px 0
+			.review_slide-foto
+				+col()
+				+size(2)
+				+size-sm(3)
+				+size-xs(12)
+				+xs-block
+					margin-bottom: 15px
+				img
+					height: 125px
+					width: 125px
+					border-radius: 10em
+			.review_slide-text
+				+col()
+				+size(10)
+				+size-sm(9)
+				+size-xs(12)
+				strong
+					margin-top: 25px
+					color: $accent
+					display: block
+					text-transform: uppercase
+					font-weight: bold
+					font-size: 16px
+				span
+					text-transform: uppercase
+					font-size: 14px
+
+.s_client
+	color: #fff
+	+sm-block
+		background-size: cover
+		background-position: center
+	
+	.h2
+		color: #fff
+	&_box
+		+row-flex()
+		padding-bottom: 80px
+		.s_client-item
+			+col()
+			+size(3)
+			+size-sm(6)
+			text-align: center
+			font-size: 18px
+			strong
+				display: block
+				font-weight: bold
+				+sm(padding-bottom, 35px)
+				
+.s_contact
+	background-color: #f3f3f3
+	.descr
+		max-width: 600px			
+	&_box
+		+row-flex()
+		max-width: 950px
+		margin-left: auto
+		margin-right: auto
+		padding-bottom: 50px
+		.s_contact-item
+			+col()
+			+size(4)
+			+size-sm(12)
+			background-color: #fff
+			padding-bottom: 40px
+			.item-icon
+				width: 100%
+				height: 150px
+				display: flex
+				align-items: center
+				justify-content: center
+				//background-color: #222
+				color: #fff
+				i
+					font-size: 50px
+			strong, p, a
+				display: block
+				text-align: center
+				text-transform: uppercase
+				text-decoration: none
+				color: #444
+			strong
+				padding: 20px	
+				font-size: 18px
+			p
+				line-height: 20px
+				span
+					font-weight: bold
+
+.footer-ajax-form
+	margin: 80px auto 130px
+	max-width: 900px
+
+	.input_wrap
+		+row-flex()
+		justify-content: space-between
+		input
+			+col()
+			+size(4)
+			+size-sm(12)
+			padding: 10px
+			margin-bottom: 30px
+			border: 1px solid #d8dce0
+			font-size: 14px
+	textarea
+		width: 100%
+		height: 150px
+		padding: 10px
+		margin-bottom: 30px
+		border: 1px solid #d8dce0
+		box-sizing: border-box
+	button
+		width: 100%
+		background-color: $accent
+		padding: 20px
+		text-transform: uppercase
+		color: #fff
+		font-size: 16px
+		border: none
+		cursor: pointer
+		&:hover
+			background-color: darken($accent, 10%)
+	
+
+.success
+	display: none
+
+.wrap
+	max-width: 1306px
+	margin: 0 auto
+	padding-left: 15px
+	padding-right: 15px
+	#map
+		height: 300px
+		overflow: hidden
+		+row-flex()
+	.ymaps-2-1-60-map
+		height: 100% !important
+		width: 100% !important
+
+footer
+	text-align: center
+	background-color: #f3f3f3
+	.footer-logo
+		padding-top: 60px
+		padding-bottom: 30px
+	p
+		font-size: 14px
+		margin-bottom: 40px
+	.social
+		padding-bottom: 70px
+		a
+			margin: 0 5px
