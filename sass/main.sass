@@ -46,7 +46,18 @@ p
 #circle1,  #circle2, #circle3
 	color: #fff
 	text-align: center
-	
+
+.mm-navbar
+	border: none
+	height: auto
+	.mm-navbar__title
+		padding: 10px 0
+		img
+			height: 35px
+.mm-panel_has-navbar 
+    padding-top: 50px
+.mm-menu_offcanvas
+	width: 50%
 header
 	background-position: center
 	background-repeat: no-repeat
@@ -67,6 +78,7 @@ header
 				+mds(display, block)
 				display: none
 				text-align: right
+
 			nav
 				+mds(display, none)
 				padding-top: 7px
@@ -256,6 +268,7 @@ header
 				flex-wrap: wrap
 				justify-content: center
 				li
+					cursor: pointer
 					color: #464646
 					margin: 0 25px
 					line-height: 40px

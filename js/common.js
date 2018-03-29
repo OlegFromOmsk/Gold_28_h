@@ -1,5 +1,33 @@
 $(function() {
 
+	$('#my-menu').mmenu({
+		configuration: {hardwareAcceleration: false}, 
+		extensions: ['theme-dark', 'fx-menu-slide', 'pagedim-black'],
+		'navbar': {
+			title: '<img src="img/footer_logo.png">'
+		},
+		"offCanvas": {
+			position : "right"
+		}
+	});
+
+	var api = $('#my-menu').data('mmenu');
+	api.bind( "open:finish", function() {
+         $('.hamburger').addClass("is-active");
+    });
+    api.bind( "close:finish", function() {
+         $('.hamburger').removeClass("is-active");
+    });
+
+	$('.mm-listview li a').bind('click',function(event){   //Прикрепляем обработчик к событию клика по ссылке в меню
+		var $anchor = $(this);                         //записываем ссылку, по которой кликнули в переменную
+		API.bind('close:finish', function() {          //Прикрепляем обработчик к событию завершения анимации закрытия меню
+			$('html, body').stop().animate({       //функция анимации плавного перехода по якорю
+				scrollTop: $($anchor.attr('href')).offset().top
+			}, 1000,'easeInOutExpo');
+		});
+	});
+
 	function toTop(){
 	// кнопка возврата к началу
 		$('.to-top').click(function(){
@@ -93,19 +121,7 @@ $(function() {
 	    });
 	};*/
 
-	var $hamburger = $(".hamburger");
-	$hamburger.on("click", function(e) {
-		$hamburger.toggleClass("is-active");
-		if ($hamburger.hasClass('is-active')) {
-			$(".top-mnu").addClass('drop_menu');
-			$(".top-mnu").toggle();
-		} else {
-			$(".top-mnu").toggle();
-			$(".top-mnu").removeClass('drop_menu');
-		}
-	});
-
-	$('#porto_car').owlCarousel({
+	var porto = $('#porto_car').owlCarousel({
 		loop: true,
 		items: 1,
 		margin: 15,
@@ -114,6 +130,30 @@ $(function() {
 		smartSpeed: 700
 	});
 
+	/* animate filter */
+	var owlAnimateFilter = function(even) {
+		$(this)
+		.addClass('__loading')
+		.delay(70 * $(this).parent().index())
+		.queue(function() {
+			$(this).dequeue().removeClass('__loading')
+		})
+	}
+
+	$('.btn-filter-wrap').on('click', '.btn-filter', function(e) {
+		var filter_data = $(this).data('filter');
+		console.log(filter_data);
+		/* return if current */
+		if($(this).hasClass('btn-active')) return;
+
+		/* active current */
+		$(this).addClass('btn-active').siblings().removeClass('btn-active');
+
+		/* Filter */
+		porto.owlFilter(filter_data, function(_owl) { 
+			$(_owl).find('.item').each(owlAnimateFilter); 
+		});
+	})
 
 	$('#review_car').owlCarousel({
 		loop: true,
