@@ -50,14 +50,21 @@ p
 .mm-navbar
 	border: none
 	height: auto
+	position: relative
+	
 	.mm-navbar__title
 		padding: 10px 0
 		img
 			height: 35px
 .mm-panel_has-navbar 
-    padding-top: 50px
+    padding-top: 20px
 .mm-menu_offcanvas
-	width: 50%
+	+xs(width, 60%)
+.mm-panel::after, .mm-panel::before 
+	height: 0
+.mm-panels > .mm-panel > .mm-listview:first-child, .mm-panels > .mm-panel > .mm-navbar + .mm-listview
+	margin-top: 0
+
 header
 	background-position: center
 	background-repeat: no-repeat
@@ -231,6 +238,7 @@ header
 						padding: 12px
 						border-radius: 10em
 						margin-right: 30px
+						+xs(margin-right, 15px)
 		.s_why-numbers
 			+col()
 			+size(6)
@@ -272,8 +280,16 @@ header
 					color: #464646
 					margin: 0 25px
 					line-height: 40px
+				.tab-active
+					border-bottom: 1px solid $accent
 		.porto_carousel
-			padding-bottom: 60px			
+			padding-bottom: 60px
+
+			.porto_slide
+
+				img
+					margin: 0 auto
+					max-width: 600px			
 			.owl-dots
 				display: block
 				padding-top: 10px
@@ -410,13 +426,13 @@ header
 	.h2
 		color: #fff
 	&_box
-		+row-flex()
+		//+row-flex()
 		padding-bottom: 80px
 		.s_client-item
-			+col()
-			+size(3)
-			+size-sm(6)
-			+size-xs(12)
+			//+col()
+			//+size(3)
+			//+size-sm(6)
+			//+size-xs(12)
 			text-align: center
 			font-size: 18px
 			strong

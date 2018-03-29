@@ -53,12 +53,12 @@
 					<nav id="my-menu">
 						<ul>
 							<li><a href="#">Главная</a></li>
-							<li><a href="/#about">О нас</a></li>
-							<li><a href="/#uslugi">Услуги</a></li>
-							<li><a href="/#portfolio">Портфолио</a></li>
-							<li><a href="/#review">Отзывы</a></li>
-							<li><a href="/#client">Наши клиенты</a></li>
-							<li><a href="/#contact">Контакты</a></li>
+							<li><a href="#about">О нас</a></li>
+							<li><a href="#uslugi">Услуги</a></li>
+							<li><a href="#portfolio">Портфолио</a></li>
+							<li><a href="#review">Отзывы</a></li>
+							<li><a href="#client">Наши клиенты</a></li>
+							<li><a href="#contact">Контакты</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -191,20 +191,29 @@
 			<div class="s_portfolio_box">
 				<nav class="porto_mnu">
 					<ul class="btn-filter-wrap">
-						<li class="btn-filter" data-filter="*">Все работы</li>
-						<li class="btn-filter" data-filter=".cat-a">Полиграфия</li>
-						<li class="btn-filter" data-filter=".cat-b">Сувенирка</li>
-						<li>Брендирование ТТ</li>
-						<li>Фотостудия</li>
-						<li>Видеостудия</li>
-						<li>Дизайнстудия</li>
-						<li>Наружняя реклама</li>
-						<li>Выставочные стенды</li>
-						<li>Подарочные наборы</li>
+						<li id="tab-0" class="tab-active">Полиграфия</li>
+						<li id="tab-1">Сувенирка</li>
+						<li id="tab-2">Брендирование ТТ</li>
+						<li id="tab-3">Фотостудия</li>
+						<li id="tab-4">Видеостудия</li>
+						<li id="tab-5">Дизайнстудия</li>
+						<li id="tab-6">Наружняя реклама</li>
+						<li id="tab-7">Выставочные стенды</li>
+						<li id="tab-8">Подарочные наборы</li>
 					</ul>
 				</nav>
 
 				<div class="porto_carousel owl-carousel owl-theme" id="porto_car"">
+					<div class="porto_slide"><img src="img/slide_1.PNG" alt=""></div>
+					<div class="porto_slide"><img src="img/slide_1.PNG" alt=""></div>
+					<div class="porto_slide"><img src="img/slide_1.PNG" alt=""></div>
+					<div class="porto_slide"><img src="img/slide_1.PNG" alt=""></div>
+					<div class="porto_slide"><img src="img/slide_1.PNG" alt=""></div>
+					<div class="porto_slide"><img src="img/slide_1.PNG" alt=""></div>
+					<div class="porto_slide"><img src="img/slide_1.PNG" alt=""></div>
+					<div class="porto_slide"><img src="img/slide_1.PNG" alt=""></div>
+					<div class="porto_slide"><img src="img/slide_1.PNG" alt=""></div>
+					
 				<!--	<div class="porto_slide">
 							<div class="grid-item"><img src="img/1.png" alt=""></div>
 							<div class="grid-item"><img src="img/5.png" alt=""></div>
@@ -241,12 +250,7 @@
 							<div class="grid-item"><img src="img/12.png" alt=""></div>
 
 					</div> -->
-					<div class="porto_slide cat-a">
-						<img src="img/slide_1.PNG" alt="">
-					</div>
-					<div class="porto_slide cat-b">
-						<img src="img/slide_1.PNG" alt="">
-					</div>
+
 				</div>
 			</div>
 		</div>
@@ -321,10 +325,30 @@
 		</div>
 	</section>
 
-	<section id="client" class="s_client" style="background-image: url(img/s_client_bg.png)">
+<!--	<section id="client" class="s_client" style="background-image: url(img/s_client_bg.png)">
 		<div class="wrapper">
 			<h2 class="h2">Наши клиенты</h2>
 			<div class="s_client_box">
+				<div class="s_client-item">
+					<p>ИП<strong>"Мир Пара"</strong></p>
+				</div>
+				<div class="s_client-item">
+					<p>НП ООО<strong>"Мебельпром"</strong></p>
+				</div>
+				<div class="s_client-item">
+					<p>СООО<strong>"ВЬЯНТИ"</strong></p>
+				</div>
+				<div class="s_client-item">
+					<p>ОАО<strong>"Бобруйсксельмаш"</strong></p>
+				</div>
+			</div>
+		</div>
+	</section>
+-->
+		<section id="client" class="s_client" style="background-image: url(img/s_client_bg.png)">
+		<div class="wrapper">
+			<h2 class="h2">Наши клиенты</h2>
+			<div class="s_client_box owl-carousel owl-theme" id="client_car">
 				<div class="s_client-item">
 					<p>ИП<strong>"Мир Пара"</strong></p>
 				</div>
@@ -399,7 +423,7 @@
 		</div>
 	</section>
 
-	<!-- Yandex Geocoder 
+	<!-- Yandex Geocoder -->
 	<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	
 	<div class="wrap"><div id="map"></div></div>

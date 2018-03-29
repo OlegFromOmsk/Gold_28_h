@@ -2,12 +2,17 @@ $(function() {
 
 	$('#my-menu').mmenu({
 		configuration: {hardwareAcceleration: false}, 
-		extensions: ['theme-dark', 'fx-menu-slide', 'pagedim-black'],
+		extensions: ['theme-dark', 'widescreen', 'effect-menu-slide'],
 		'navbar': {
-			title: '<img src="img/footer_logo.png">'
+			title: '<img src="img/header_logo.png">'
 		},
-		"offCanvas": {
+		offCanvas: {
 			position : "right"
+		},
+		onClick: {
+            close: true,
+            preventDefault: false,
+            setSelected: false
 		}
 	});
 
@@ -35,7 +40,7 @@ $(function() {
         }).scroolly([
             {
                 alias: 'hidden',
-                minWidth: 321,
+                
                 to: 'doc-top + 40vp',
                 css: {
                     opacity: '0',
@@ -44,7 +49,7 @@ $(function() {
             },
             {
                 alias: 'shown',
-                minWidth: 321,
+                
                 from: 'doc-top + 40vp',
                 to: 'doc-bottom',
                 css: {
@@ -98,7 +103,7 @@ $(function() {
 
 
 	// карта Yandex maps API. по умолчанию адрес 'пр. Мира, д. 89'
-/*	var str_adress='ул. Калиновского, д. 3';
+	var str_adress='ул. Калиновского, д. 3';
 	ymaps.ready(init);
 	function init() {
 
@@ -119,49 +124,60 @@ $(function() {
 	            checkZoomRange: true
 	        });
 	    });
-	};*/
+	};
 
 	var porto = $('#porto_car').owlCarousel({
-		loop: true,
+		loop: false,
 		items: 1,
 		margin: 15,
 		dots: true,
-		autoplay: false,
-		smartSpeed: 700
+		autoplay: true,
+		smartSpeed: 300
 	});
 
-	/* animate filter */
-	var owlAnimateFilter = function(even) {
-		$(this)
-		.addClass('__loading')
-		.delay(70 * $(this).parent().index())
-		.queue(function() {
-			$(this).dequeue().removeClass('__loading')
-		})
-	}
-
-	$('.btn-filter-wrap').on('click', '.btn-filter', function(e) {
-		var filter_data = $(this).data('filter');
-		console.log(filter_data);
-		/* return if current */
-		if($(this).hasClass('btn-active')) return;
-
-		/* active current */
-		$(this).addClass('btn-active').siblings().removeClass('btn-active');
-
-		/* Filter */
-		porto.owlFilter(filter_data, function(_owl) { 
-			$(_owl).find('.item').each(owlAnimateFilter); 
-		});
+	porto.on('changed.owl.carousel', function(event) {
+	  var item = event.item.index;     // Позиция текущего слайда
+	  console.log(event.item);
+	  $('.btn-filter-wrap li').removeClass('tab-active');
+	  $('.btn-filter-wrap').find('#tab-' + item).addClass('tab-active');
 	})
+
+	var $set = $('.btn-filter-wrap li');
+	$('.btn-filter-wrap').on('click', 'li', function () {
+	    var activeTabIndex = $set.index(this);  
+	    porto.trigger('to.owl.carousel', activeTabIndex);  
+	});	
 
 	$('#review_car').owlCarousel({
 		loop: true,
 		items: 1,
 		margin: 15,
 		dots: true,
-		autoplay: false,
+		autoplay: true,
 		smartSpeed: 700
+	});
+
+	$('#client_car').owlCarousel({
+		loop: true,
+		items: 5,
+		margin: 15,
+		dots: true,
+		autoplay: false,
+		smartSpeed: 700,
+		responsive : {
+		    // breakpoint from 0 up
+		    0 : {
+		        items: 1
+		    },
+		    // breakpoint from 480 up
+		    480 : {
+		        items: 2
+		    },
+		    // breakpoint from 768 up
+		    860 : {
+		        items: 4
+		    }
+		}
 	});
 
 	$("#circle1").circliful({
