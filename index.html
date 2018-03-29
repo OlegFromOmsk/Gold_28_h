@@ -42,12 +42,12 @@
 					<nav id="main_menu">
 						<ul>
 							<li><a href="#">Главная</a></li>
-							<li><a href="#">О нас</a></li>
-							<li><a href="#">Услуги</a></li>
-							<li><a href="#">Портфолио</a></li>
-							<li><a href="#">Отзывы</a></li>
-							<li><a href="#">Наши клиенты</a></li>
-							<li><a href="#">Контакты</a></li>
+							<li><a href="#about">О нас</a></li>
+							<li><a href="#uslugi">Услуги</a></li>
+							<li><a href="#portfolio">Портфолио</a></li>
+							<li><a href="#review">Отзывы</a></li>
+							<li><a href="#client">Наши клиенты</a></li>
+							<li><a href="#contact">Контакты</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -155,20 +155,17 @@
 				</div>
 				<div class="s_why-numbers">
 					<div class="wrap">
-						<div id="circle1">
-							<div class="info">
-						    	Полиграфия
-						    </div>
+						<div class="circle-wrap">
+							<div id="circle1" data-percent="80"></div>
+							<div class="info">Полиграфия</div>
 						</div>
-						<div id="circle2">
-							<div class="info">
-						    	Наружная реклама
-						    </div>
+						<div class="circle-wrap">
+							<div id="circle2" data-percent="75"></div>
+							<div class="info">Наружная реклама</div>
 						</div>
-						<div id="circle3">
-							<div class="info">
-						    	Фотография
-						    </div>
+						<div class="circle-wrap">
+							<div id="circle3" data-percent="60"></div>
+							<div class="info">Фотография</div>
 						</div>
 					</div>
 				</div>				
@@ -195,13 +192,44 @@
 						<li>Подарочные наборы</li>
 					</ul>
 				</nav>
-				<div class="porto_carousel owl-carousel owl-theme" id="porto_car">
-					<div class="porto_slide">
-						<img src="img/slide_1.PNG" alt="">
+
+				<div class="porto_carousel owl-carousel owl-theme" id="porto_car"">
+				<!--	<div class="porto_slide">
+							<div class="grid-item"><img src="img/1.png" alt=""></div>
+							<div class="grid-item"><img src="img/5.png" alt=""></div>
+							<div class="grid-item"><img src="img/9.png" alt=""></div>
+
+							<div class="grid-item"><img src="img/2.png" alt=""></div>
+							<div class="grid-item"><img src="img/6.png" alt=""></div>
+							<div class="grid-item"><img src="img/10.png" alt=""></div>
+
+							<div class="grid-item"><img src="img/3.png" alt=""></div>
+							<div class="grid-item"><img src="img/7.png" alt=""></div>
+							<div class="grid-item"><img src="img/11.png" alt=""></div>
+							
+							<div class="grid-item"><img src="img/4.png" alt=""></div>
+							<div class="grid-item"><img src="img/8.png" alt=""></div>
+							<div class="grid-item"><img src="img/12.png" alt=""></div>
+
 					</div>
 					<div class="porto_slide">
-						<img src="img/slide_1.PNG" alt="">
-					</div>
+							<div class="grid-item"><img src="img/1.png" alt=""></div>
+							<div class="grid-item"><img src="img/2.png" alt=""></div>
+							<div class="grid-item"><img src="img/3.png" alt=""></div>
+
+							<div class="grid-item"><img src="img/4.png" alt=""></div>
+							<div class="grid-item"><img src="img/5.png" alt=""></div>
+							<div class="grid-item"><img src="img/6.png" alt=""></div>
+
+							<div class="grid-item"><img src="img/7.png" alt=""></div>
+							<div class="grid-item"><img src="img/8.png" alt=""></div>
+							<div class="grid-item"><img src="img/9.png" alt=""></div>
+							
+							<div class="grid-item"><img src="img/10.png" alt=""></div>
+							<div class="grid-item"><img src="img/11.png" alt=""></div>
+							<div class="grid-item"><img src="img/12.png" alt=""></div>
+
+					</div> -->
 					<div class="porto_slide">
 						<img src="img/slide_1.PNG" alt="">
 					</div>
@@ -214,7 +242,28 @@
 		<div class="wrapper">
 			<div class="wrap">
 				<p>Если Вас заинтересовали <span>наши услуги</span>, свяжитесь с нами сейчас</p>
-				<a href="#">Контакты</a>
+				<a class="button-popup" href="#callback">Контакты</a>
+				<div class="hidden">
+					<div id="callback" class="popup">
+						<form class="ajax-form"> 
+							<!-- Hidden Required Fields -->
+							<input type="hidden" name="project_name" value="Запрос с GoldReklam">
+							<input type="hidden" name="admin_email" value="goldreklam@mail.ru">
+							<input type="hidden" name="form_subject" value="Заявка с сайта">
+							<!-- END Hidden Required Fields -->
+							<div class="input_wrap">
+								<input class="form-control" type="text" name="Имя" placeholder="Ваше имя" required>
+								<input class="form-control" type="email" name="Email" placeholder="Email" required>
+								<input class="form-control" type="text" name="Тема" placeholder="Тема" required>
+							</div>
+							<textarea style="resize: none;" class="form-control" type="text" name="Сообщение" required></textarea>
+							<button class="button">Отправить сообщение</button>
+						</form>
+						<div class="success">
+							<span>Спасибо за сообщение</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -314,25 +363,29 @@
 
 	<section id="form_back" class="s_form_back">
 		<div class="wrapper">
-			<form class="footer-ajax-form"> 
-				<!-- Hidden Required Fields -->
-				<input type="hidden" name="project_name" value="Запрос с GoldReklam">
-				<input type="hidden" name="admin_email" value="goldreklam@mail.ru">
-				<input type="hidden" name="form_subject" value="Заявка с сайта">
-				<!-- END Hidden Required Fields -->
-				<div class="input_wrap">
-					<input class="form-control" type="text" name="Имя" placeholder="Ваше имя" required>
-					<input class="form-control" type="email" name="Email" placeholder="Email" required>
-					<input class="form-control" type="text" name="Тема" placeholder="Тема" required>
+			<div class="popup">
+				<form class="footer-ajax-form"> 
+					<!-- Hidden Required Fields -->
+					<input type="hidden" name="project_name" value="Запрос с GoldReklam">
+					<input type="hidden" name="admin_email" value="goldreklam@mail.ru">
+					<input type="hidden" name="form_subject" value="Заявка с сайта">
+					<!-- END Hidden Required Fields -->
+					<div class="input_wrap">
+						<input class="form-control" type="text" name="Имя" placeholder="Ваше имя" required>
+						<input class="form-control" type="email" name="Email" placeholder="Email" required>
+						<input class="form-control" type="text" name="Тема" placeholder="Тема" required>
+					</div>
+					<textarea style="resize: none;" class="form-control" type="text" name="Сообщение" required></textarea>
+					<button class="button">Отправить сообщение</button>
+				</form>
+				<div class="success">
+					<span>Спасибо за сообщение</span>
 				</div>
-				<textarea style="resize: none;" class="form-control" type="text" name="Сообщение" required></textarea>
-				<button class="button">Отправить сообщение</button>
-			</form>
-			<div class="success">Спасибо за сообщение</div>
+			</div>
 		</div>
 	</section>
 
-	<!-- Yandex Geocoder -->
+	<!-- Yandex Geocoder 
 	<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	
 	<div class="wrap"><div id="map"></div></div>
@@ -355,6 +408,7 @@
 			</div>
 		</div>
 	</footer>
+<div class="to-top">вверх</div>
 
 </body>
 </html>
