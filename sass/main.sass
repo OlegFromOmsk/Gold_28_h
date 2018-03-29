@@ -188,23 +188,26 @@ header
 					order: 3	
 
 .s_why
-	background-color: #333
+	+md(background-size, cover)
 	color: #fff
 	.h2
 		color: #fff
 
 	&_box
 		+row-flex()
-		max-width: 900px
+		max-width: 1050px
 		margin: 0 auto
 		padding-bottom: 50px
 		align-items: center
 		.s_why-items
 			+col()
 			+size(6)
-			+size-mds(12)
-			
+			+size-md(12)
+			+md(text-align, center)
+			+xs(text-align, left)
+
 			ul
+				+md(display, inline-block)
 				li
 					display: flex
 					align-items: center
@@ -219,17 +222,23 @@ header
 		.s_why-numbers
 			+col()
 			+size(6)
-			+size-mds(12)
-			+mds(padding-top, 40px)
-			justify-content: space-between
+			+size-md(12)
+			+md(padding-top, 25px)
+
 			.wrap
 				display: flex
 				align-items: center
-				justify-content: space-around
-				.numbers_item
-					span
-						display: block
-						text-align: center
+				justify-content: space-between
+				+xs(flex-wrap, wrap)
+				+md-block
+					justify-content: space-around
+				.circle-wrap
+					display: flex
+					flex-direction: column
+					align-items: center
+					justify-content: center
+					flex-basis: 150px
+					
 
 .s_portfolio
 	background-color: #f3f3f3
@@ -256,8 +265,9 @@ header
 				display: block
 				padding-top: 10px
 
+
 .s_connect
-	padding: 40px
+	padding: 40px 0 35px
 	color: #fff
 	.wrap
 		max-width: 1000px
@@ -275,7 +285,7 @@ header
 			span
 				font-weight: bold
 				
-		a
+		.button-popup
 			color: #fff
 			font-size: 16px
 			text-decoration: none
@@ -283,7 +293,53 @@ header
 			border-radius: 20px
 			padding: 7px 35px
 			&:hover
+				background-color: darken($accent, 20%)
+		.hidden
+			display: none
+.popup
+	margin: 0 auto
+	max-width: 900px
+	position: relative
+	.ajax-form
+		margin: 0 auto
+		max-width: 900px
+		background-color: #fff
+		padding: 40px
+		.input_wrap
+			+row-flex()
+			justify-content: space-between
+			input
+				+col()
+				+size(4)
+				+size-sm(12)
+				padding: 10px
+				margin-bottom: 30px
+				border: 1px solid #d8dce0
+				font-size: 14px
+		textarea
+			width: 100%
+			height: 150px
+			padding: 10px
+			margin-bottom: 30px
+			border: 1px solid #d8dce0
+			box-sizing: border-box
+		.button
+			width: 100%
+			background-color: $accent
+			padding: 20px
+			text-transform: uppercase
+			color: #fff
+			font-size: 16px
+			border: none
+			cursor: pointer
+			&:hover
 				background-color: darken($accent, 10%)
+		.mfp-close
+			position: absolute
+			top: 0
+			right: 0
+			font-size: 40px
+			color: $light
 
 .s_review
 	background-color: #f3f3f3
@@ -303,10 +359,11 @@ header
 			margin-right: auto
 			max-width: 1000px
 			padding: 30px 30px 0
+			+xs(padding, 10px 10px 0)
 			.review_slide-foto
 				+col()
 				+size(2)
-				+size-sm(3)
+				+size-mds(3)
 				+size-xs(12)
 				+xs-block
 					margin-bottom: 15px
@@ -314,10 +371,11 @@ header
 					height: 125px
 					width: 125px
 					border-radius: 10em
+					margin: 0 auto
 			.review_slide-text
 				+col()
 				+size(10)
-				+size-sm(9)
+				+size-mds(9)
 				+size-xs(12)
 				strong
 					margin-top: 25px
@@ -345,6 +403,7 @@ header
 			+col()
 			+size(3)
 			+size-sm(6)
+			+size-xs(12)
 			text-align: center
 			font-size: 18px
 			strong
@@ -370,11 +429,11 @@ header
 			padding-bottom: 40px
 			.item-icon
 				width: 100%
-				height: 150px
+				height: 145px
 				display: flex
 				align-items: center
 				justify-content: center
-				//background-color: #222
+				background-size: cover
 				color: #fff
 				i
 					font-size: 50px
@@ -425,10 +484,26 @@ header
 		cursor: pointer
 		&:hover
 			background-color: darken($accent, 10%)
-	
 
-.success
+.success 
 	display: none
+	position: absolute
+	left: 0
+	right: 0
+	top: 0
+	bottom: 0
+	margin: 0 auto
+	max-width: 450px
+	height: 60px
+	z-index: 1
+	background-color: #FFF
+	text-align: center
+	padding: 30px
+	span
+		color: $accent
+		font-size: 38px
+		margin-bottom: 10px
+		display: block
 
 .wrap
 	max-width: 1306px
@@ -456,3 +531,26 @@ footer
 		padding-bottom: 70px
 		a
 			margin: 0 5px
+
+.to-top
+	width: 40px
+	height: 40px
+	position: fixed
+	right: 20px
+	bottom: -100px
+	opacity: 0
+	transition: all 0.2s
+	text-align: center
+	background-color: rgba(0,0,0,.7)
+	border: 1px solid black
+	line-height: 18px
+	font-size: 10px
+	text-transform: uppercase
+	cursor: pointer
+	z-index: 15
+	color: #ddab7a
+	&::before
+		content: '\2191'
+		padding-top: 5px
+		font-size: 22px
+		display: block
