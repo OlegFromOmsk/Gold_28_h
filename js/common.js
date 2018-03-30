@@ -61,6 +61,15 @@ $(function() {
 	}
 	toTop();
 
+	$('.grid-item').magnificPopup({
+		type: 'image',
+		closeOnContentClick: true,
+		mainClass: 'mfp-img-mobile',
+		image: {
+			verticalFit: true
+		}
+	});
+
 	// отправка формы на сервер
 	$(".button-popup").magnificPopup();
 
@@ -132,6 +141,7 @@ $(function() {
 		margin: 15,
 		dots: true,
 		autoplay: true,
+		autoplayHoverPause: true,
 		smartSpeed: 300
 	});
 
