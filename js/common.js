@@ -140,9 +140,21 @@ $(function() {
 		items: 1,
 		margin: 15,
 		dots: true,
-		autoplay: true,
+		nav: true,
+		autoplay: false,
 		autoplayHoverPause: true,
-		smartSpeed: 300
+		smartSpeed: 300,
+		navText: '',
+		responsive : {
+		    // breakpoint from 0 up
+		    0 : {
+		        nav: false,
+		    },
+		    // breakpoint from 768 up
+		    860 : {
+		        nav: true
+		    }
+		}
 	});
 
 	porto.on('changed.owl.carousel', function(event) {

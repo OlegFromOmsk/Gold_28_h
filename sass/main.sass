@@ -286,6 +286,7 @@ header
 					border-bottom: 1px solid $accent
 		.porto_carousel
 			padding-bottom: 60px
+			position: relative
 			.porto_slide
 				column-count: 4
 				column-gap: 0.5em
@@ -311,8 +312,27 @@ header
 	background-color: darken($accent, 10%)
 	transform: scale(1.2)
 
-						
-						
+.porto_carousel .owl-nav
+	position: absolute
+	top: 40%
+	width: 100%
+.porto_carousel .owl-nav .owl-prev, .porto_carousel .owl-nav .owl-next
+	position: absolute
+	height: 50px
+	width: 50px
+	background-size: cover
+	background-color: inherit
+	padding: 0
+	margin: 0		
+.porto_carousel .owl-nav .owl-prev 
+    left: 0px
+    background-image: url(../img/back.svg)
+.porto_carousel .owl-nav .owl-next, .porto_carousel .owl-nav .owl-next:hover 
+    right: 0px
+    background-image: url(../img/next.svg)
+	background-color: inherit
+
+
 .s_connect
 	padding: 40px 0 35px
 	color: #fff
