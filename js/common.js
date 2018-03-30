@@ -147,7 +147,6 @@ $(function() {
 
 	porto.on('changed.owl.carousel', function(event) {
 	  var item = event.item.index;     // Позиция текущего слайда
-	  console.log(event.item);
 	  $('.btn-filter-wrap li').removeClass('tab-active');
 	  $('.btn-filter-wrap').find('#tab-' + item).addClass('tab-active');
 	})
