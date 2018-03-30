@@ -783,9 +783,9 @@
   content: "\e67f"; }
 
 /**
- * Owl Carousel v2.2.1
- * Copyright 2013-2017 David Deutsch
- * Licensed under  ()
+ * Owl Carousel v2.3.3
+ * Copyright 2013-2018 David Deutsch
+ * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
  */
 .owl-carousel, .owl-carousel .owl-item {
   -webkit-tap-highlight-color: transparent;
@@ -799,6 +799,7 @@
 .owl-carousel .owl-stage {
   position: relative;
   -ms-touch-action: pan-Y;
+  touch-action: manipulation;
   -moz-backface-visibility: hidden; }
 
 .owl-carousel .owl-stage:after {
@@ -840,11 +841,17 @@
 
 .owl-carousel .owl-dot, .owl-carousel .owl-nav .owl-next, .owl-carousel .owl-nav .owl-prev {
   cursor: pointer;
-  cursor: hand;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
+
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
+  background: 0 0;
+  color: inherit;
+  border: none;
+  padding: 0 !important;
+  font: inherit; }
 
 .owl-carousel.owl-loading {
   opacity: 0;
@@ -857,6 +864,8 @@
   visibility: hidden; }
 
 .owl-carousel.owl-drag .owl-item {
+  -ms-touch-action: none;
+  touch-action: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -965,9 +974,9 @@
   width: 100%; }
 
 /**
- * Owl Carousel v2.2.1
- * Copyright 2013-2017 David Deutsch
- * Licensed under  ()
+ * Owl Carousel v2.3.3
+ * Copyright 2013-2018 David Deutsch
+ * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
  */
 .owl-theme .owl-dots, .owl-theme .owl-nav {
   text-align: center;
@@ -4395,7 +4404,22 @@ p {
 header {
   background-position: center;
   background-repeat: no-repeat;
-  height: 746px; }
+  height: 746px;
+  background-attachment: fixed; }
+  header::before {
+    content: "";
+    background: url(../img/header_bg.png) no-repeat right;
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-background-size: cover;
+            background-size: cover;
+    background-position: center;
+    z-index: -10;
+    background-color: #9d9d9f; }
   header .header_line {
     padding-top: 40px;
     display: -webkit-box;
@@ -4499,42 +4523,48 @@ header {
       line-height: 26px;
       letter-spacing: .8px; }
 
-.s_about_box {
-  background-repeat: no-repeat;
-  background-position: center right;
-  max-width: 850px;
-  margin: 0 auto 40px; }
-  .s_about_box .h2 {
-    text-align: left; }
-  .s_about_box .descr {
-    max-width: 400px;
-    text-align: left;
-    margin-left: 0; }
-  .s_about_box .adv-items {
-    max-width: 650px;
-    z-index: 1; }
-    .s_about_box .adv-items ul {
-      -webkit-column-count: 2;
-         -moz-column-count: 2;
-              column-count: 2;
-      height: 200px;
-      -webkit-column-fill: auto;
-         -moz-column-fill: auto;
-              column-fill: auto; }
-      @media screen and (max-width: 560px) {
-        .s_about_box .adv-items ul {
-          -webkit-column-count: 1;
-             -moz-column-count: 1;
-                  column-count: 1;
-          height: auto; } }
-      .s_about_box .adv-items ul li {
-        color: #81868e;
-        padding-bottom: 10px; }
-        .s_about_box .adv-items ul li::before {
-          content: '-';
-          color: #eaa840;
-          font-weight: bold;
-          margin-right: 7px; }
+.s_about {
+  background-color: #fff; }
+  .s_about_box {
+    background-repeat: no-repeat;
+    background-position: center right;
+    max-width: 850px;
+    margin: 0 auto;
+    padding-bottom: 40px; }
+    @media screen and (max-width: 560px) {
+      .s_about_box {
+        background-position: center; } }
+    .s_about_box .h2 {
+      text-align: left; }
+    .s_about_box .descr {
+      max-width: 400px;
+      text-align: left;
+      margin-left: 0; }
+    .s_about_box .adv-items {
+      max-width: 650px;
+      z-index: 1; }
+      .s_about_box .adv-items ul {
+        -webkit-column-count: 2;
+           -moz-column-count: 2;
+                column-count: 2;
+        height: 200px;
+        -webkit-column-fill: auto;
+           -moz-column-fill: auto;
+                column-fill: auto; }
+        @media screen and (max-width: 560px) {
+          .s_about_box .adv-items ul {
+            -webkit-column-count: 1;
+               -moz-column-count: 1;
+                    column-count: 1;
+            height: auto; } }
+        .s_about_box .adv-items ul li {
+          color: #81868e;
+          padding-bottom: 10px; }
+          .s_about_box .adv-items ul li::before {
+            content: '-';
+            color: #eaa840;
+            font-weight: bold;
+            margin-right: 7px; }
 
 .s_uslugi {
   background-color: #f3f3f3; }
@@ -4783,7 +4813,8 @@ header {
       .s_portfolio_box .porto_mnu ul .tab-active {
         border-bottom: 1px solid #eaa840; }
   .s_portfolio_box .porto_carousel {
-    padding-bottom: 60px; }
+    padding-bottom: 60px;
+    position: relative; }
     .s_portfolio_box .porto_carousel .porto_slide {
       -webkit-column-count: 4;
          -moz-column-count: 4;
@@ -4822,6 +4853,36 @@ header {
   -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
           transform: scale(1.2); }
+
+.porto_carousel .owl-nav {
+  position: absolute;
+  top: 40%;
+  width: 100%; }
+
+.porto_carousel .owl-nav .owl-prev, .porto_carousel .owl-nav .owl-next {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-color: inherit;
+  padding: 0;
+  margin: 0; }
+
+.porto_carousel .owl-nav .owl-prev {
+  left: 0; }
+  @media screen and (max-width: 1100px) {
+    .porto_carousel .owl-nav .owl-prev {
+      display: none; } }
+
+.porto_carousel .owl-nav .owl-next {
+  right: 0; }
+  @media screen and (max-width: 1100px) {
+    .porto_carousel .owl-nav .owl-next {
+      display: none; } }
+
+.owl-theme .owl-nav [class*="owl-"]:hover {
+  background: 0; }
 
 .s_connect {
   padding: 40px 0 35px;
@@ -5172,6 +5233,9 @@ header {
     font-size: 38px;
     margin-bottom: 10px;
     display: block; }
+
+#mm-0 {
+  background-color: #fff; }
 
 .wrap {
   max-width: 1306px;

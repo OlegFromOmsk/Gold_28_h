@@ -61,14 +61,7 @@ $(function() {
 	}
 	toTop();
 
-	$('.grid-item').magnificPopup({
-		type: 'image',
-		closeOnContentClick: true,
-		mainClass: 'mfp-img-mobile',
-		image: {
-			verticalFit: true
-		}
-	});
+
 
 	// отправка формы на сервер
 	$(".button-popup").magnificPopup();
@@ -144,17 +137,7 @@ $(function() {
 		autoplay: false,
 		autoplayHoverPause: true,
 		smartSpeed: 300,
-		navText: '',
-		responsive : {
-		    // breakpoint from 0 up
-		    0 : {
-		        nav: false,
-		    },
-		    // breakpoint from 768 up
-		    860 : {
-		        nav: true
-		    }
-		}
+		navText: ["<img src='img/back.svg'>","<img src='img/next.svg'>"]
 	});
 
 	porto.on('changed.owl.carousel', function(event) {
@@ -168,6 +151,24 @@ $(function() {
 	    var activeTabIndex = $set.index(this);  
 	    porto.trigger('to.owl.carousel', activeTabIndex);  
 	});	
+
+	$('.porto_slide').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		tLoading: 'Loading image #%curr%...',
+		mainClass: 'mfp-img-mobile',
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+		},
+		image: {
+			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+			titleSrc: function(item) {
+				return item.el.attr('title');
+			}
+		}
+	});
 
 	$('#review_car').owlCarousel({
 		loop: true,

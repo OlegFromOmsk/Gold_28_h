@@ -69,6 +69,20 @@ header
 	background-position: center
 	background-repeat: no-repeat
 	height: 746px
+	background-attachment: fixed
+	&::before
+		content: ""
+		background: url(../img/header_bg.png) no-repeat right
+		display: block
+		position: fixed
+		left: 0
+		top: 0
+		width: 100%
+		height: 100%
+		background-size: cover
+		background-position: center
+		z-index: -10
+		background-color: #9d9d9f
 
 	.header_line
 		padding-top: 40px
@@ -126,11 +140,14 @@ header
 			letter-spacing: .8px
 
 .s_about
+	background-color: #fff
 	&_box
 		background-repeat: no-repeat
 		background-position: center right
 		max-width: 850px
-		margin: 0 auto 40px
+		margin: 0 auto
+		padding-bottom: 40px
+		+xs(background-position, center)
 		.h2
 			text-align: left
 		.descr
@@ -325,12 +342,13 @@ header
 	padding: 0
 	margin: 0		
 .porto_carousel .owl-nav .owl-prev 
-    left: 0px
-    background-image: url(../img/back.svg)
-.porto_carousel .owl-nav .owl-next, .porto_carousel .owl-nav .owl-next:hover 
-    right: 0px
-    background-image: url(../img/next.svg)
-	background-color: inherit
+	left: 0
+	+lg(display, none)
+.porto_carousel .owl-nav .owl-next
+	right: 0
+	+lg(display, none)
+.owl-theme .owl-nav [class*="owl-"]:hover 
+	background: 0
 
 
 .s_connect
@@ -572,7 +590,8 @@ header
 		font-size: 38px
 		margin-bottom: 10px
 		display: block
-
+#mm-0
+	background-color: #fff
 .wrap
 	max-width: 1306px
 	margin: 0 auto
