@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+	<meta charset="utf-8">
+	<base href="/">
+
+	<title>OptimizedHTML 4</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+<body>
+	<div class="head">
+		<div class="wrapper">
+			<div class="top">
+				<div class="logo_container">
+					<div class="wrap">
+						<div class="top_logo"><a href="/"><span class="yellow">ВС</span>-СЕРВИС</a></div>
+						<div class="top_logo_text">ЭВАКУАТОР В САНКТ-ПЕТЕРБУРГЕ</div>
+					</div>
+				</div>
+				<div class="top_adress_container">
+					<div class="top_adress">г. Санкт-Петербург, площадь Карла Фаберже, д. 8</div>
+					<div class="top_email"><script>document.write('<'+'a'+' '+'h'+'r'+'e'+'f'+'='+"'"+'m'+'a'+'i'+'l'+'t'+'o'+'&'+'#'+'5'+'8'+';'+'i'+'n'+'&'+'#'+'1'+'0'+'2'+';'+'%'+'&'+'#'+'5'+'4'+';'+'F'+'&'+'#'+'6'+'4'+';'+'&'+'#'+'1'+'1'+'8'+';'+'s'+'-'+'&'+'#'+
+						'3'+'7'+';'+'7'+'&'+'#'+'5'+'1'+';'+'%'+'6'+'5'+'r'+'v'+'i'+'c'+'&'+'#'+'1'+'0'+'1'+';'+'&'+'#'+'4'+
+						'6'+';'+'&'+'#'+'1'+'1'+'5'+';'+'u'+"'"+'>'+'i'+'n'+'f'+'o'+'&'+'#'+'6'+'4'+';'+'v'+'&'+'#'+'1'+'1'+
+						'5'+';'+'&'+'#'+'4'+'5'+';'+'s'+'e'+'r'+'v'+'i'+'c'+'e'+'&'+'#'+'4'+'6'+';'+'s'+'u'+'<'+'/'+'a'+'>'
+						);</script><noscript>[Включите в браузере JavaScript, чтобы увидеть адрес]</noscript></div>
+					<div class="top_worktime">РАБОТАЕМ КРУГЛОСУТОЧНО!</div>
+				</div>
+				<div class="top_phone_container">
+					<div class="top_phone"><span class="gray">8 (812)</span> 911-07-00</div>
+					<div class="fb_call" id="fb_call">ОБРАТНЫЙ ЗВОНОК</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="head_container">
+		<div class="top_menu_container">
+			<div class="wrapper">
+				<ul class="top_menu active_menu">
+				    <li><a href="/">ГЛАВНАЯ</a></li>
+				    <li><a href="/price/">ЦЕНЫ</a></li>
+				    <li><a href="/galereya/">ФОТОГАЛЕРЕЯ</a></li>
+				    <li><a href="/evakuator/">УСЛУГИ ЭВАКУАТОРА</a></li>
+				    <li><a href="/tehpomosh/">ТЕХПОМОЩЬ</a></li>
+				    <li><a href="/sotrudnichestvo/">СОТРУДНИЧЕСТВО</a></li>
+				    <li><a href="/contacts/" class="last">КОНТАКТЫ</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="top_form_container">
+			<div class="wrapper">
+				<div class="top_form">
+					<form action="/" class="zayavka" name="zayavka" id="zayavka">
+					    <div class="form_title">ОНЛАЙН ЗАКАЗ ЭВАКУАТОРА</div>
+					    <input type="hidden" value="0" name="hp" id="hp" />     
+					    <input type="text" placeholder="Ваше имя" name="fio" id="fio" /> 			
+					    <input type="text" placeholder="Ваш телефон" name="tel" id="tel" pattern="{0,15}" /> 			
+					    <input type="text" placeholder="Когда" name="time" id="time" pattern="{0,15}" /> 			
+					    <input type="text" placeholder="Откуда" name="place" id="place" /> 			
+					    <input type="text" placeholder="Модель и марка авто" name="car" id="car" pattern="{0,15}" /> 			
+					    <input type="submit" value="ОТПРАВИТЬ ЗАЯВКУ" name="send_zayavka" id="send_zayavka" />
+					</form>
+					<script type="text/javascript" src="/js/placeholder.js"></script> 
+					<script type="text/javascript">
+						$('input, textarea').placeholder();
+						$('#send_zayavka').click(function(e){
+						var form = $('#zayavka');
+						form.find('#hp').val(1);
+						sform= form.serialize();
+						form.find('#hp').val(0);
+						$.post('/zayavka.php',sform,function(data){
+						if(data){
+						setTimeout('msgbox("'+data+'")',500);
+						form.trigger('reset');}
+								
+						});
+							e.preventDefault();
+						});
+					</script>
+					<div class="evak_bg">&nbsp;</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="main_container">
+		<div class="wrapper">
+			<div class="main_content">
+				<div class="main_content-blocks">
+					<div class="block_type1">
+						<div class="block_type1_header">
+						<div class="left_header_image">&nbsp;</div>
+						<div class="center_header_image">ТЕХНИЧЕСКАЯ<br />
+						ПОМОЩЬ</div>
+						<div class="right_header_image">&nbsp;</div>
+						</div>
+						<div class="block_type1_content">Случилась неожиданная поломка? Это не повод для тревоги. Один звонок &ndash; и наши специалисты примчатся к вам на выручку. Наши слесаря и электрики выполняют на выезде более 50 работ &ndash; грамотно, чётко, профессионально.
+						<div class="block_type1_button_container"><a href="/tehpomosh/">ПОДРОБНЕЕ</a></div>
+						</div>
+					</div>
+					<div class="block_type1">
+						<div class="block_type1_header">
+						<div class="left_header_image">&nbsp;</div>
+						<div class="center_header_image">ТРЕЗВЫЙ<br />
+						ВОДИТЕЛЬ</div>
+						<div class="right_header_image">&nbsp;</div>
+						</div>
+						<div class="block_type1_content">Востребованная услуга пользуется популярностью среди автовладельцев Санкт-Петербурга. И на вечеринке можно погулять, и автомобиль в целости и сохранности под окном стоять будет. Это как раз тот случай, когда одним выстрелом убивают двух зайцев.
+						<div class="block_type1_button_container"><a href="/trezvyy_voditel/">ПОДРОБНЕЕ</a></div>
+						</div>
+					</div>
+					<div class="block_type1">
+						<div class="block_type1_header">
+						<div class="left_header_image">&nbsp;</div>
+						<div class="center_header_image">УСЛУГИ<br />
+						ЭВАКУАТОРА</div>
+						<div class="right_header_image">&nbsp;</div>
+						</div>
+						<div class="block_type1_content">Ваш автомобиль утратил способность передвигаться самостоятельно? Компания &quot;ВС-Сервис&quot; всегда вас выручит. Один звонок &ndash; и мы будем у вас через 30-40 минут. Мы перевозим автомашины и спецтехнику массой до 3,5 тонн в любую точку города.
+						<div class="block_type1_button_container"><a href="/evakuator/">ПОДРОБНЕЕ</a></div>
+						</div>
+					</div>
+				</div>
+				<h1>Эвакуация автомобилей от компании &quot;ВС-Сервис&quot;</h1>
+				<p>Если ваш &laquo;мустанг&raquo; по какой-то причине утратил способность к самостоятельному передвижению, достаточно позвонить нам, и специалисты компании через полчаса будут у вас. Одним из главных критериев при оказании услуги является стоимость. Спешим вас заверить, что в компании &quot;ВС-Сервис&quot; лучшие цены.</p>
+				<p>Мы работаем каждый день, без выходных и праздников. Заявки принимаются круглосуточно, а стоимость услуги фиксируется в момент заказа и не меняется после подачи эвакуатора. Современное оборудование и специалисты высокой квалификации помогают найти оптимальное решение даже в самых сложных ситуациях. Все это делает &quot;ВС-Сервис&quot; одной из лидирующих компаний с безупречной репутацией в сфере услуг эвакуации на Северо-Западе.</p>
+				<h2>За полчаса в любую точку города</h2>
+				<p>&quot;ВС-Сервис&quot; &ndash; это, прежде всего, оперативность и профессионализм. Через 30 минут после звонка эвакуатор уже будет у вас. В отличие от конкурентов, нам все равно, в каком положении находится поврежденный автомобиль: в кювете, на боку, перевернутый кверху колесами &ndash; наше оборудование позволяет осуществлять погрузку и перевозку транспортных средств в любом их техническом состоянии. Обращайтесь, и убедитесь в этом сами. В любом случае мы вас не разочаруем.</p>
+				<h2>Преимущества</h2>
+				<ul class="advantages">
+				    <li class="advantage1">
+				    <div class="advant_title">Честная<br />
+				    цена</div>
+				    <div class="advant_text">Мы не берем предоплату, как это делают наши конкуренты. Оплата только по факту. Тарифы фиксированные, цены доступные, подача бесплатная. Не просто делаем свою работу, но и сохраняем бюджет клиента.</div>
+				    </li>
+				    <li class="advantage2">
+				    <div class="advant_title">Безопасность<br />
+				    перевозки</div>
+				    <div class="advant_text">Компания гарантирует отсутствие повреждений на вашем автомобиле при транспортировке. Современная техника, высококвалифицированные водители. Аккуратно погрузим, бережно перевезем.</div>
+				    </li>
+				    <li class="advantage3">
+				    <div class="advant_title">Онлайн<br />
+				    расчет</div>
+				    <div class="advant_text">Стоимость услуг, опубликованная на сайте, не изменится после приезда к вам наших специалистов. Цену заказа озвучит диспетчер при приеме заявки. Форму оплаты вы выбираете сами: наличный или безналичный расчет.</div>
+				    </li>
+				    <li class="advantage4">
+				    <div class="advant_title">Простота<br />
+				    заказа</div>
+				    <div class="advant_text">Наши эвакуаторы укомплектованы всем необходимым для работы оборудованием, включая гидравлические подъемно-сдвижные платформы, что позволяет выполнять погрузку и перевозку транспортных средств в любом техническом состоянии.</div>
+				    </li>
+				    <li class="advantage5">
+				    <div class="advant_title">Круглосуточное<br />
+				    обслуживание</div>
+				    <div class="advant_text">Мы работаем без выходных и праздничных дней, ведь поломка вашего автомобиля может случиться в любую минуту. Прием заявок осуществляется круглосуточно. Наш диспетчер всегда на связи.</div>
+				    </li>
+				</ul>
+				<h2>Цены</h2>
+				<table class="standart_table">
+					<tr><th>Услуга</th><th>Стоимость</th></tr>
+					<tr><td>Мотоциклы</td><td>от 1200 руб.</td></tr>
+					<tr><td>Легковые автомобили до 1300 кг</td><td>от 1200 руб.</td></tr>
+					<tr><td>Грузовики до 3,5тонн</td><td>от 1900руб.</td></tr>
+					<tr><td>Подача эвакуатора</td><td>бесплатно</td></tr>
+				</table>
+				<div class="more_link_cont"><a href="/price/">Посмотреть весь прайс-лист</a></div>
+			</div>
+		</div>
+	</div>
+  
+	<div class="news_container">
+		<div class="wrapper">
+			<h2 class="news_title">Полезная информация</h2>
+			<div class="news_content">
+				<ul class="news_list">
+				    <li class="news_item">
+				    	<div class="news_inner_title">Особенности эвакуации при сложной погрузке</div>
+				    	<div class="news_text">На дорогах бывают ситуации, когда в результате поломки или ДТП оказывается заблокированным колесо или АКПП, пришла в негодность ходовая часть. В этом случае понадобится специальное дополнительное оборудование, чтобы погрузить поврежденный автомобиль на эвакуатор.</div>
+				    	<div class="news_link"><a href="/info/osobennosti_evakuacii/">ПОДРОБНЕЕ</a></div>
+				    </li>
+				    <li class="news_item">
+				    	<div class="news_inner_title">Недобросовестные службы эвакуации.</div>
+				    	<div class="news_text">Надеясь на русское &laquo;авось&raquo;, автовладельцы не часто забивают себе в мобильный телефон номер эвакуационной службы, надежной и проверенной временем, полагая, что с их автомобилем форс-мажорные обстоятельства не возникнут. А зря!</div>
+				    	<div class="news_link"><a href="/info/nedobrosovestnye_sluzhby/">ПОДРОБНЕЕ</a></div>
+				    </li>
+					<li class="news_item">
+				    	<div class="news_inner_title">Документы необходимые для эвакуации</div>
+				    	<div class="news_text">Современный человек уже не представляет свою жизнь без, личного средства передвижения, чтобы с комфортом и за максимально короткий промежуток времени добраться в точку назначения. Однако, в пути нередко возникают непредвиденные ситуации...</div>
+				    	<div class="news_link"><a href="/info/neobhodimye_documenty/">ПОДРОБНЕЕ</a></div>
+				    </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	  
+	<div class="foot">
+		<div class="wrapper">
+			<div class="foot_container">
+				<div class="mezhgorod">Компания "ВС-Сервис" также осуществляет междугородние и международные перевозки: Финляндия, Лаппеенранта, Хельсинки, Котка, Иматра, Турку.</div>
+				<div class="development">Сайт сделан компанией "<a href="http://web-zapros.ru">Вэб-запрос</a>"</div>
+				<div class="bottom_phone">8 812 911-07-00</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

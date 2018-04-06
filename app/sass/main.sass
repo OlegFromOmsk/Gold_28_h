@@ -1,0 +1,634 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
++reset()
+
+.wrapper
+	+wrapper()
+
+@font-face
+  font-family: days
+  src: url('/fonts/days.eot?#iefix') format("embedded-opentype"), url('../fonts/days.ttf') format("truetype"), url('/fonts/days.otf') format("opentext")
+
+
+html, body
+  margin: 0
+  padding: 0
+  font-size: 12px
+  font-family: days
+
+ul
+  text-align: left
+  margin-left: 30px
+  font-family: verdana
+  font-size: 12px
+  font-weight: bold
+
+.head
+  width: 100%
+  text-align: center
+  background-color: #FFF
+  > *
+    color: #4b4c4f
+
+.top
+  +row-flex()
+  margin-bottom: 20px
+  margin-top: 10px
+
+.logo_container
+  +col()
+  +size(4)
+  +size-xs(12)
+  +xs(text-align, center)
+
+.wrap
+  max-width: 320px
+  margin: 0 auto
+  background-color: #ffd51c
+  border-radius: 10px
+.top_logo a
+  display: inline-block
+  width: 100%
+  background: #3c3d40
+  border-radius: 7px
+  height: 70px
+  font-size: 40px
+
+  line-height: 70px
+  color: #ECE7E7
+  text-decoration: none
+  &:hover
+    color: #ECE7E7
+
+.top_logo_text
+  line-height: 30px
+
+.top_adress_container
+  +col()
+  +size(4)
+  +size-xs(12)
+  +xs(text-align, center)
+
+  text-align: left
+  padding: 15px 0px
+  height: 70px
+
+.top_adress
+  background: url(/img/icons_top.png) no-repeat 0px 3px
+  font-family: verdana
+  font-size: 12px
+
+.top_email
+  background: url(/img/icons_top.png) no-repeat 0px -15px
+  font-family: verdana
+
+.top_adress_container > *
+  padding-left: 20px
+  margin: 5px 0px
+  line-height: 20px
+
+.top_phone_container
+  +col()
+  +size(4)
+  +size-xs(12)
+  +xs-block
+  	text-align: center
+  	margin-top: 30px
+  text-align: right
+  height: 80px
+  padding: 10px 0px
+
+.top_phone
+  font-size: 30px
+
+.fb_call
+  background: #FFD51C
+  border-radius: 10px
+  display: inline-block
+  padding: 10px 35px
+  font-size: 14px
+  margin-top: 10px
+  cursor: pointer
+  font-weight: bold
+  &:hover
+    background: #f73037
+    color: #fff
+
+.top_menu > li
+  float: left
+  list-style: outside none
+  display: inline-block
+  margin: 10px 1px
+
+.head_container
+
+.top_menu_container
+  width: 100%
+  background: url(/img/top_menu_border.jpg) repeat-x 0 100% #FFD51C
+  padding-bottom: 10px
+  margin-bottom: 0px
+
+.top_menu
+  display: flex
+  flex-wrap: wrap
+  padding: 0px
+  margin: 0px
+  +xs(justify-content, center)
+  font-family: days
+  > li a
+    display: inline-block
+    padding: 10px
+    background: url(/img/separator.jpg) no-repeat 100% 50%
+    color: #4B4C4F
+    text-decoration: none
+    border-radius: 10px
+    font-size: 12px
+    font-weight: bold
+
+.top_menu > li a
+  &:hover
+    color: #FFF
+    background: #4B4C4F
+  &.active
+    color: #FFF
+    background: #4B4C4F
+    &.last
+      color: #FFF
+      background: #4B4C4F
+
+.top_form_container
+  width: 100%
+  background: url(/img/city.png) repeat-x 0 70% #FFF
+  margin: 0px
+  padding-top: 10px
+  
+.zayavka
+
+  background-color: #FFD51C
+  border-radius: 10px
+  padding: 10px 15px
+  margin: 20px auto 20px 0
+  min-width: 260px
+  width: 100%
+  max-width: 360px
+  +xs(margin, 20px auto)
+  > *
+    display: block
+    margin: 10px 0px
+    border-radius: 8px
+    box-sizing: border-box
+    width: 100%
+
+.form_title
+  font-size: 16px
+  color: #4B4C4F
+  font-weight: bold
+
+.zayavka
+  > input[type=text]
+    border: 1px solid #D9B51B
+    padding: 5px
+    box-shadow: inset 0px 2px 5px 0px #cacaca
+  input[type="submit"]
+    padding: 10px 5px
+    border: none
+    color: #FFF
+    background: #4B4C4F
+    font-weight: bold
+    cursor: pointer
+    font-family: days
+    font-size: 16px
+
+.top_worktime
+  font-weight: bold
+
+.zayavka input[type="submit"]:hover
+  background-color: #f73037
+
+.top_form
+  display: flex
+.evak_bg
+  background: url(/img/evak.png) no-repeat 50% 50%
+  width: 645px
+  height: 350px
+  display: inline-block
+  +xs(display, none)
+
+.foot
+  background: url(/img/city_foot.jpg) repeat-x #666
+  padding-top: 220px
+  width: 100%
+  text-align: center
+  display: inline-block
+  font-family: verdana
+
+.foot_container
+  +row-flex()
+  padding-bottom: 20px
+  +xs(justify-content, center)
+  > *
+    color: #FFF
+    width: 50%
+    display: inline-block
+    float: left
+
+
+.bottom_phone
+  +size-xs(12)
+  font-size: 30px
+  font-weight: bold
+  padding-top: 10px
+
+.development
+  +size-xs(12)
+  +xs-block
+  	order: 2
+
+  text-align: left
+  line-height: 18px
+  padding-top: 18px
+  a
+    color: #FFF
+
+.left_header_image
+  background: url(/img/block_type1_header_img.png) no-repeat
+
+.block_type1_header > *
+  display: inline-block
+  height: 50px
+  float: left
+
+.center_header_image
+  background: url(/img/block_type1_header_img.png) no-repeat -12px 0px
+  width: 200px
+  text-align: center
+  padding-top: 8px
+  font-weight: bold
+  color: #FFD51C
+  position: relative
+  z-index: 3
+
+.right_header_image
+  background: url(/img/block_type1_header_img.png) no-repeat -214px 0px
+  width: 10px
+  position: relative
+  z-index: 1
+
+.left_header_image
+  width: 10px
+  position: relative
+  z-index: 1
+
+.block_type1_content
+  clear: both
+  border: 5px solid #d6d1ca
+  border-radius: 15px
+  position: relative
+  padding: 50px 10px 10px 10px
+  margin-top: -55px
+  z-index: 2
+  height: 210px
+  background-color: #efeee8
+  display: inline-block
+  color: #4B4C4F
+  font-family: verdana
+  text-align: justify
+  font-size: 13px
+  line-height: 20px
+
+.block_type1
+  display: inline-block
+  width: 300px
+  text-align: center
+  margin: 15px
+  position: relative
+  float: left
+
+.block_type1_header
+  display: inline-block
+  font-size: 14px
+
+.block_type1_button_container
+  position: absolute
+  bottom: 0px
+  left: 50%
+  margin-left: -106px
+  height: 30px
+  padding: 10px 0px
+  background: url(/img/separator2.png) no-repeat 50% 0%
+  display: inline-block
+  text-align: center
+  font-family: days
+  a
+    display: inline-block
+    background-color: #FFD51C
+    color: #4B4C4F
+    text-decoration: none
+    padding: 5px
+    border: 1px solid #4B4C4F
+    border-radius: 10px
+    width: 200px
+    font-weight: bold
+    font-size: 14px
+    &:hover
+      color: #FFF
+      background-color: #f73037
+
+.main_container
+  width: 100%
+  text-align: center
+  display: inline-block
+  padding-bottom: 5px
+
+.main_content
+  text-align: left
+  &-blocks
+  	+row-flex()
+  	.block_type1
+  	  +col()
+  	  +size(4)
+  	  +size-xs(12)
+h1
+  text-align: center
+  font-size: 30px
+  font-weight: bold
+  color: #000
+  clear: both
+
+*
+  color: #4B4C4F
+
+h2
+  font-size: 24px
+  font-weight: bold
+  text-align: center
+  color: #000
+
+p
+  text-align: left
+  text-indent: 20px
+  font-family: verdana
+
+.advantages
+  +row-flex()
+  justify-content: center
+  margin-top: 15px
+  	
+  .advantage1
+    background: url(/img/advantages_bg.png) no-repeat 0 0
+  .advantage2
+    background: url(/img/advantages_bg.png) no-repeat -201px 0px
+  .advantage3
+    background: url(/img/advantages_bg.png) no-repeat -402px 0px
+  .advantage4
+    background: url(/img/advantages_bg.png) no-repeat -606px 0px
+  .advantage5
+    background: url(/img/advantages_bg.png) no-repeat -810px 0px
+  > li
+    list-style: outside none
+    max-width: 180px
+   
+    margin: 0px 10px
+    padding-top: 250px
+    height: 270px
+    text-align: left
+    display: inline-block
+  padding: 0px
+
+.advant_title
+  font-size: 18px
+  font-weight: bold
+  margin: 10px 0px
+  color: #000
+
+.advant_text
+  font-size: 12px
+  font-family: verdana
+
+.standart_table
+  border-collapse: collapse
+  width: 100%
+  border-bottom: 1px solid
+  font-family: verdana
+  text-align: center
+  td, th
+    padding: 5px 10px
+  td
+    border: 1px solid #c8c8c8
+  th
+    border: 1px solid #6c6c6c
+    background-color: #FFD51C
+    color: #000
+    font-weight: bold
+
+.top_menu > li a.last
+  background: none
+
+.news_list
+  +row-flex()
+
+.news_item
+  list-style: outside none
+  +col()
+  +size(4)
+  +size-xs(12)
+  padding: 5px
+
+
+.news_date
+  font-size: 12px
+  text-align: left
+
+.news_inner_title
+  font-size: 16px
+  font-weight: bold
+  color: #000
+  text-align: left
+  margin: 10px 0px
+  font-family: days
+
+.news_text
+  font-size: 12px
+  text-align: left
+  text-indent: 10px
+  font-family: verdana
+  font-weight: normal
+  height: 120px
+
+.news_link
+  text-align: right
+  padding: 10px
+  a
+    display: inline-block
+    background-color: #FFD51C
+    padding: 5px 25px
+    border: 1px solid #4B4C4F
+    border-radius: 7px
+    text-decoration: none
+    font-weight: bold
+    font-size: 10px
+    font-family: days
+    &:hover
+      background-color: #f73037
+      color: #FFF
+
+.news_container
+  width: 100%
+  text-align: center
+
+
+.news_title
+  box-shadow: 0px 5px 10px 0px #E7E7E7
+
+.top_menu > li a.last:hover
+  background-color: #4B4C4F
+
+.gray
+  color: #AAABAB
+
+.yellow
+  color: #FFD51C
+
+.map, .contacts_container
+  padding: 7px
+  background: #FFD51C
+  background: repeating-linear-gradient(135deg, #4A400B, #4A4100 15px, #FFD51C 15px, #FFD51C 30px)
+  background: -webkit-repeating-linear-gradient(135deg, #4A400B, #4A4100 15px, #FFD51C 15px, #FFD51C 30px)
+  background: -moz-repeating-linear-gradient(135deg, #4A400B, #4A4100 15px, #FFD51C 15px, #FFD51C 30px)
+  background: -o-repeating-linear-gradient(135deg, #4A400B, #4A4100 15px, #FFD51C 15px, #FFD51C 30px)
+  background: -ms-repeating-linear-gradient(135deg, #4A400B, #4A4100 15px, #FFD51C 15px, #FFD51C 30px)
+
+.contacts_content
+  background-color: white
+  display: table
+  width: 100%
+  height: 120px
+  font-size: 14px
+
+.map
+  border-top-left-radius: 10px
+  border-top-right-radius: 10px
+  text-align: center
+
+.contacts_container
+  padding-top: 0px
+  border-bottom-left-radius: 10px
+  border-bottom-right-radius: 10px
+
+.contacts_block
+  width: 180px
+  float: left
+  height: 97px
+  border: 2px solid #FBCC45
+  border-radius: 21px
+  margin: 10px 0px 10px 18px
+  padding-left: 120px
+  text-align: left
+
+.contacts_phone
+  background: url(/img/phone_icon.png) no-repeat 0% 50%
+
+.contacts_email
+  background: url(/img/mail_icon.png) no-repeat 0% 50%
+
+.contacts_address
+  background: url(/img/adr_icon.png) no-repeat 0% 50%
+
+.contacts_block span
+  display: table-cell
+  vertical-align: middle
+  height: 97px
+  width: 180px
+  text-align: left
+
+#gallery_lb a
+  display: inline-block
+  padding: 5px
+  margin: 10px
+  background: #FFD51C
+  background: repeating-linear-gradient(135deg, #4A400B, #4A4100 15px, #FFD51C 15px, #FFD51C 30px)
+  background: -webkit-repeating-linear-gradient(135deg, #4A400B, #4A4100 15px, #FFD51C 15px, #FFD51C 30px)
+  background: -moz-repeating-linear-gradient(135deg, #4A400B, #4A4100 15px, #FFD51C 15px, #FFD51C 30px)
+  background: -o-repeating-linear-gradient(135deg, #4A400B, #4A4100 15px, #FFD51C 15px, #FFD51C 30px)
+  background: -ms-repeating-linear-gradient(135deg, #4A400B, #4A4100 15px, #FFD51C 15px, #FFD51C 30px)
+  border-radius: 10px
+  &:hover
+    background: #FFD51C
+
+.more_link_cont
+  text-align: right
+  padding: 5px
+  font-family: verdana
+
+a:hover
+  color: #FFD51C
+
+.mezhgorod
+  +size-xs(12)
+  width: 100%
+  text-align: left
+  +xs(text-align, center)
+
+#lea_msgbox
+  textarea
+    width: 180px
+    height: 100px
+  input
+    width: 180px
+  label
+    > span
+      width: 200px
+      display: inline-block
+    margin-top: 7px
+    display: block
+  border-radius: 10px
+  width: 400px
+  background-color: white
+  padding: 20px 20px 65px 20px
+  font-family: Arial, Helvetica, sans-serif
+  font-size: 15px
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5)
+
+#lea_msgbox_x
+  color: #d43f3a
+
+#lea_msgbox_cancel
+  display: none
+  margin: 0 0 0 10px
+
+#lea_msgbox_ok, #lea_msgbox_cancel
+  font-weight: bold
+  background: #FFD51C
+  margin-bottom: 0
+  font-size: 14px
+  font-weight: normal
+  line-height: 1.428571429
+  text-align: center
+  vertical-align: middle
+  cursor: pointer
+  border: 1px solid transparent
+  border-radius: 4px
+  white-space: nowrap
+  width: 150px
+  height: 30px
+  float: left
+  cursor: pointer
+
+#lea_msgbox_ok:hover, #lea_msgbox_cancel:hover
+  background: #f73037
+
+#lea_msgbox_ok > span, #lea_msgbox_cancel > span
+  display: block
+  padding: 5px 0 0 0
+
+#lea_msgbox_ok:hover > span, #lea_msgbox_cancel:hover > span
+  color: white
+
+#lea_msgbox_btns
+  position: absolute
+  bottom: 15px
+  left: 140px
